@@ -1,0 +1,4 @@
+Gradient Descent Algorithm
+
+Used to find a hypothesis function h(theta), which minimizes the average distances of our individual data points and regression fit line.
+The algorithm should update theta0 and theta1 simultaneously.

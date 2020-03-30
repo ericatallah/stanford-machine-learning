@@ -1,0 +1,122 @@
+Not equals operator is ~
+4 ~= 3
+
+Matrices:
+A = [1 2; 3 4; 5 6];
+
+1  2
+3  4
+5  6
+
+pinv(A) - gets the inverse of matrix A
+
+B = [2 4; 6 8; 10 12];
+
+2   4
+6   8
+10  12
+
+A .* B - Will do index multiplication:
+
+2   8
+18  32
+50  72
+
+
+t = [0:0.1:1] - Will create a vector with the given range
+0  0.1  0.2  0.3  0.4  0.5  0.6  0.7  0.8  0.9  1.0
+
+**** Plotting ****
+t = [0:0.01:0.98];
+y1 = sin(2*pi*4*t);
+y2 = cos(2*pi*4*t);
+
+To plot the sin and cos functions against t:
+plot(t, y1);
+plot(t, y2);
+
+// use "hold on" command to plot them both on same figure.
+plot(t, y1);
+hold on;
+plot(t, y2);
+
+
+// use "figure" command to create figure plots.
+figure(1); plot(t, y1);
+figure(2); plot(t, y2);
+
+// use subplot to display multiple plots in one figure
+subplot(1,2,1); 
+plot(t, y1);
+subplot(1,2,2);
+plot(t, y2);
+
+// use "axis" command to set the range of the axes
+axis([0.5 1 -1 1]);
+
+
+// clf;  clears the figure
+clf;
+
+
+********* Loops and Control Structures ********
+v = zeros(10,1); // creates 10x1 vector of zeroes
+for i=1:10,
+  v(i) = 2^i;
+end;
+
+// can also do like this:
+indices = 1:10;
+
+for i=indices,
+  disp(i);
+end;
+
+// while loops:
+i = 1;
+while i <= 5,
+  v(i) = 100;
+  i = i+1;
+end;
+
+// using break:
+i = 1;
+while true,
+  v(i) = 999;
+  i = i+1;
+  if i == 6,
+    break;
+  end;
+end;
+
+// if else:
+a = 2;
+if a == 1,
+  disp('The value is one');
+elseif a == 2,
+  disp('The value is two');
+else
+  disp('The value is neither one or two');
+end;
+
+// Functions:
+// To create a function you put your code in a file ending with .m
+
+// Example .m file:
+function y = squareThisNumber(x)
+
+y = x^2;
+
+// In octave CLI, cd to location where .m file is located, and call function:
+squareThisNumber(5)
+
+  
+
+
+
+
+
+
+
+
+
