@@ -1,0 +1,9 @@
+Predict "y=1" if z >= 0
+
+Where z = Theta' * X
+
+y = 1 when:
+5 - x1 >= 0
+5 >= x1
+x1 <= 5
+
