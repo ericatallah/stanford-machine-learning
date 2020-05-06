@@ -36,13 +36,23 @@ grad = zeros(size(theta));
 %           grad = grad + YOUR_CODE_HERE (using the temp variable)
 %
 
+sig = sigmoid(X*theta);
+term1 = -y .* log(sig);
+term2 = (1-y) .* log(1 - sig);
+term3 = (lambda/(2*m)) * sum(theta(2:end).^2);
+% J = (1/m) * sum(term1 - term2);
+% grad = (1/m) * sum((sig - y) .* X);
 
+J = (1/m) * sum(term1 - term2) + term3;
+grad = (1/m) * sum((sig - y) .* X);
+regTerm = (lambda/m) .* theta(2:end);
+grad(2:end) += regTerm';
 
-
-
-
-
-
+% fprintf('\nSize theta: [%.0f, %.0f] \n', size(theta, 1), size(theta, 2));
+% fprintf('\nSize X: [%.0f, %.0f] \n', size(X, 1), size(X, 2));
+% fprintf('\nSize sigmoid: [%.0f, %.0f] \n', size(sig, 1), size(sig, 2));
+% fprintf('\nCost J: %.02f \n', J);
+% fprintf('grad: %.02f \n', grad);
 
 
 % =============================================================
